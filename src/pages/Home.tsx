@@ -1,5 +1,5 @@
 import Container from "../components/Container";
-import Table from "../components/Table";
+import TableContainer from "../components/TableContainer";
 import { Heading, SubHeading, Padding } from "../controls";
 
 function Home() {
@@ -8,7 +8,7 @@ function Home() {
       <Heading>Payouts</Heading>
       <Padding>
         <SubHeading>Payouts History</SubHeading>
-        <Table />
+        <TableContainer />
       </Padding>
     </Container>
   );
