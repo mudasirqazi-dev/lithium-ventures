@@ -1,16 +1,4 @@
-import React, { useState } from "react";
-import {
-  Icon,
-  PaginationButton,
-  PaginationRow,
-  PillGreen,
-  PillGrey,
-  Row,
-  Table,
-  Td1,
-  Td3,
-} from "../controls";
-import Utils from "../utils/utils";
+import { Icon, PaginationRow } from "../controls";
 import { Metadata } from "../types";
 import imgPrev from "../media/prev.png";
 import imgNext from "../media/next.png";

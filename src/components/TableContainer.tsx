@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import {
-  Icon,
   IconLoading,
   RowContentCenter,
   RowContentEnd,

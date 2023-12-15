@@ -1,46 +1,51 @@
-# Getting Started with Create React App
+# Getting Started with Lithium Ventures
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## How to run it
 
-In the project directory, you can run:
+You can do following steps to run this on your computer:
 
-### `npm start`
+- Get the source code
+  - If you're getting it from GitHub, then clone the repository
+  - If you're getting it from \*.zip file, then extract the files from zip
+- Install dependencies
+  - Open your Terminal/CMD in the directory where `package.json` file is present
+- Run the app
+  - Run command `npm install` to install all dependencies
+  - Run command `npm start` to start the project on your local machine, it will open it by defualt on `http://localhost:3000/`
+- Get production build
+  - To get an optimized production build, run the command `npm build` and it will generate a `build` folder at the root of your project directory. You put this build folder on your server to deploy it
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Framework I choose
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+You gave option to use either ReactJS or NextJS. I know both of these technologies but I'm best at `ReactJS`, therefore I choose to use ReactJS for this application.
 
-### `npm test`
+## Architecture of the application
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The application did not had a lot of features but still I tried to match the architecture with a big and scaleable application. I've created separate files and folders to keep things more readable and scaleable. Here is a little detail of all the folders
 
-### `npm run build`
+- `components` - keeps all the application components
+- `controls` - keeps all the styled components/controls
+- `media` - keeps all the images
+- `pages` - keeps all the pages with respect to the URL, as we've only one page therefore it will contain only one file
+- `services` - keeps all the API calling logic and methods, a separate file for all the methods for an API entity and as we've a single API entity, therefore there's only one service file
+- `types` - keeps all the types that are shared between pages and components
+- `utils` - any extra logic or method needed will go in this folder
+- `utils/constants.ts` - this file will contain application level global constants, for example, I kept the API URL here so that its easily accessable in whole application
+- `utils/enums.ts` - this file is to keep all the enums. It was not really required in this small project but as I mentioned, I wanted to show the best possible architecture. I've created an enum for the type of a payment record
+- `utils/utils.ts` - this file contains general purpose functions to easily access in whole application e.g., I've created a separate function to format the currency and date time
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Live demo
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- I was able to connect my GitHub repository with the Vercel (https://vercel.com/) that I use for almost all of my projects. This project is also linked with Vercel's automatic CI/CD system and for each commit I make on GitHub, it automatically deploys it on a server and provides a live URL.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  Here is the live demo URL: https://lithium-ventures.vercel.app/
 
-### `npm run eject`
+## My protfolio and recent projects
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+For more details about me and my recent projects, please visit my portfolio
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+https://mudasirqazi-dev.vercel.app/
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+https://mudasirqazi-dev.vercel.app/projects
