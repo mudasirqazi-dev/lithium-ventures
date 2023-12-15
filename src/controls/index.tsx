@@ -6,6 +6,11 @@ const Padding = styled.div`
 const Row = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
+`;
+const PaginationRow = styled(Row)`
+  gap: 15px;
+  margin-top: 20px;
 `;
 const RowContentEnd = styled(Row)`
   justify-content: end;
@@ -14,19 +19,45 @@ const RowContentCenter = styled(Row)`
   justify-content: center;
   margin-top: 20px;
 `;
+const RowContentStart = styled(Row)`
+  justify-content: start;
+  margin-top: 20px;
+`;
+const RowSearchArea = styled(Row)`
+  justify-content: space-between;
+  margin-top: 20px;
+`;
 const Searchbar = styled.input`
   border-radius: 8px;
   height: 30px;
   width: 200px;
   padding: 4px 8px;
   justify-content: end;
+  border-color: #000;
+  &:focus-visible {
+    border-color: #000;
+  }
 `;
-const SearchButton = styled.button`
+const Button = styled.button`
   border-radius: 8px;
   height: 40px;
-  width: 80px;
   padding: 4px 8px;
+  border: none;
+  background-color: #000;
+  color: #ddd;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  &:hover {
+    color: #fff;
+  }
+`;
+const SearchButton = styled(Button)`
+  width: 80px;
   margin-left: 10px;
+`;
+const PaginationButton = styled(Button)`
+  padding: 2px 10px;
 `;
 const Heading = styled.h3`
   font-weight: 600;
@@ -35,6 +66,10 @@ const Heading = styled.h3`
 const SubHeading = styled.h3`
   font-weight: 600;
   font-size: 20px;
+`;
+const Text = styled.div`
+  font-weight: 500;
+  font-size: 12px;
 `;
 const Table = styled.table`
   width: 100%;
@@ -84,14 +119,29 @@ const PillGreen = styled(Pill)`
   background-color: #60ca57;
   width: 45px;
 `;
+const Icon = styled.img`
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
+`;
+const IconLoading = styled.img`
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  margin-right: 10px;
+`;
 
 export {
   Padding,
   Row,
   RowContentEnd,
   RowContentCenter,
+  RowContentStart,
+  RowSearchArea,
   Searchbar,
   SearchButton,
+  PaginationButton,
+  Button,
   Heading,
   SubHeading,
   Table,
@@ -100,4 +150,8 @@ export {
   Td3,
   PillGrey,
   PillGreen,
+  Text,
+  Icon,
+  IconLoading,
+  PaginationRow,
 };

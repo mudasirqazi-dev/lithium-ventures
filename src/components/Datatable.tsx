@@ -1,24 +1,18 @@
-import React, { useState } from "react";
 import { PillGreen, PillGrey, Table, Td1, Td3 } from "../controls";
 import Utils from "../utils/utils";
+import { Record } from "../types";
+import { STATUS_TYPE } from "../utils/enums";
 
-type Record = {
-  dateAndTime: string;
-  status: "Pending" | "Completed";
-  username: string;
-  value: string;
+type Props = {
+  data: Record[];
 };
 
-const STATUS_TYPE = {
-  PENDING: "Pending",
-  COMPLETED: "Completed",
-};
-
-function Datatable({ data }: any) {
+function Datatable({ data }: Props) {
   return (
     <Table>
       <thead>
         <tr>
+          <th>Username</th>
           <th>Date & Time</th>
           <th>Status</th>
           <th>Value</th>
@@ -27,6 +21,7 @@ function Datatable({ data }: any) {
       <tbody>
         {data?.map((record: Record, idx: number) => (
           <tr key={idx}>
+            <Td1>{record?.username}</Td1>
             <Td1>{Utils.formatDateime(record?.dateAndTime)}</Td1>
             <td>
               {record?.status === STATUS_TYPE.PENDING ? (
@@ -35,7 +30,7 @@ function Datatable({ data }: any) {
                 <PillGreen>Paid</PillGreen>
               )}
             </td>
-            <Td3>${Utils.formatToCurrency("234987")}</Td3>
+            <Td3>${Utils.formatToCurrency(record?.value)}</Td3>
           </tr>
         ))}
       </tbody>

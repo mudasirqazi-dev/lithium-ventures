@@ -2,6 +2,7 @@ import moment from "moment";
 
 class Utils {
   static formatToCurrency = (amount: string) => {
+    amount = amount?.replace("$", "");
     return parseFloat(amount)
       .toFixed(2)
       .replace(/\d(?=(\d{3})+\.)/g, "$&,")

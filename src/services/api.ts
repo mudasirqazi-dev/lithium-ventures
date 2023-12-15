@@ -2,10 +2,10 @@ import axios from "axios";
 import Constants from "../utils/constants";
 
 export default class Service {
-  static getAll = async () => {
+  static getAll = async (page: number) => {
     let result = { data: null, error: null };
     await axios
-      .get(Constants.GET_ALL)
+      .get(Constants.GET_ALL + page)
       .then((resp) => {
         if (resp.status === 200) {
           result.data = resp.data;
