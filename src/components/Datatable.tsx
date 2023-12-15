@@ -12,7 +12,7 @@ function Datatable({ data }: Props) {
     <Table>
       <thead>
         <tr>
-          <th>Username</th>
+          {/* <th>Username</th> */}
           <th>Date & Time</th>
           <th>Status</th>
           <th>Value</th>
@@ -21,7 +21,7 @@ function Datatable({ data }: Props) {
       <tbody>
         {data?.map((record: Record, idx: number) => (
           <tr key={idx}>
-            <Td1>{record?.username}</Td1>
+            {/* <Td1>{record?.username}</Td1> */}
             <Td1>{Utils.formatDateime(record?.dateAndTime)}</Td1>
             <td>
               {record?.status === STATUS_TYPE.PENDING ? (
