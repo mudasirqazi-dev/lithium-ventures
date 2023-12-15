@@ -1,18 +1,15 @@
-import React from "react";
-import Heading from "../components/Heading";
 import Container from "../components/Container";
-import SubHeading from "../components/SubHeading";
-import TableContainer from "../components/TableContainer";
 import Table from "../components/Table";
+import { Heading, SubHeading, Padding } from "../controls";
 
 function Home() {
   return (
     <Container>
-      <Heading />
-      <TableContainer>
-        <SubHeading />
+      <Heading>Payouts</Heading>
+      <Padding>
+        <SubHeading>Payouts History</SubHeading>
         <Table />
-      </TableContainer>
+      </Padding>
     </Container>
   );
 }

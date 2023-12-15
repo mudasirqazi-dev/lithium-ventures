@@ -1,16 +1,12 @@
-import React, { ReactNode } from "react";
-import styled from "styled-components";
+import { ReactNode } from "react";
+import { Padding } from "../controls";
 
 type Props = {
   children: ReactNode;
 };
 
 function Container({ children }: Props) {
-  const Div = styled.div`
-    padding: 25px 30px;
-  `;
-
-  return <Div>{children}</Div>;
+  return <Padding>{children}</Padding>;
 }
 
 export default Container;

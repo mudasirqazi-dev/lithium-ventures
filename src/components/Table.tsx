@@ -1,32 +1,18 @@
 import React, { ReactNode, useState } from "react";
-import styled from "styled-components";
+import {
+  RowContentCenter,
+  RowContentEnd,
+  SearchButton,
+  Searchbar,
+} from "../controls";
 
 function Table() {
   const [keyword, setKeyword] = useState<string>("");
-  const Row = styled.div`
-    display: flex;
-    flex-direction: row;
-  `;
-  const RowContentEnd = styled(Row)`
-    justify-content: end;
-  `;
-  const RowContentCenter = styled(Row)`
-    justify-content: center;
-  `;
-  const Searchbar = styled.input`
-    border-radius: 8px;
-    height: 30px;
-    width: 200px;
-    padding: 4px 8px;
-    justify-content: end;
-  `;
-  const SearchButton = styled.button`
-    border-radius: 8px;
-    height: 40px;
-    width: 80px;
-    padding: 4px 8px;
-    margin-left: 10px;
-  `;
+  const handleSearch = (e: React.MouseEvent<HTMLElement>) => {
+    e.preventDefault();
+    if (!keyword) return;
+    console.log(keyword);
+  };
 
   return (
     <>
@@ -34,13 +20,13 @@ function Table() {
         <Searchbar
           placeholder="Search with username"
           value={keyword}
-          onChange={(e) => setKeyword(e?.target?.value)}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            setKeyword(e?.target?.value)
+          }
         />
-        <SearchButton>Search</SearchButton>
+        <SearchButton onClick={handleSearch}>Search</SearchButton>
       </RowContentEnd>
-      <div style={{ marginTop: 20 }}>
-        <RowContentCenter>Table</RowContentCenter>
-      </div>
+      <RowContentCenter>Table</RowContentCenter>
     </>
   );
 }
